@@ -17,3 +17,4 @@ ansible host_or_groupname -b -m yum \
       -a "name=httpd state=present"
 ansible host_or_groupname -b -m setup
 ansible host_or_groupname -b -m setup -a "filter=*family*"
+this was modified in remote
