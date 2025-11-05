@@ -1,0 +1,19 @@
+ansible host_or_groupname -m command -a "whoami"
+ansible host_or_groupname -b -m command -a "whoami"
+ansible host_or_groupname -m command -a "whoami > myname.txt"
+ansible host_or_groupname -m shell -a "whom > myname.txt"
+ansible host_or_groupname -b -m copy \
+    -a "src=./updated.conf dest=/etc/ntp.conf \
+        owner=root group=root mode=0644 backup=yes"
+ansible host_or_groupname -b -m file \
+       -a "path=/etc/newfolder state=directory mode=0755"
+sensible host_or_groupname -b -m file \
+         -a "src=/etc/ntp.conf dest=/home/user/ntp.conf \
+             owner=user group=user state=link"
+
+ansible host_or_groupname -b -m apt \
+          -a "update_cache=yes name=apache2 state=latest"
+ansible host_or_groupname -b -m yum \
+      -a "name=httpd state=present"
+ansible host_or_groupname -b -m setup
+ansible host_or_groupname -b -m setup -a "filter=*family*"
