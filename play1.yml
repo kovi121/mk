@@ -1,6 +1,6 @@
 ---
 - name: Play book for Demo
-  hosts: all
+  hosts: localhost
   become: yes
   gather_facts: no
   remote_user: ansible
